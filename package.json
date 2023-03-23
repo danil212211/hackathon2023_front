@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nuxt": "^3.2.3",
+    "prettier": "^2.8.4"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "@editorjs/editorjs": "^2.26.5",
+    "@editorjs/embed": "^2.5.3",
+    "@editorjs/header": "^2.7.0",
+    "@editorjs/image": "^2.8.1",
+    "@nuxtjs/i18n": "^8.0.0-beta.10",
+    "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
+    "@pinia/nuxt": "^0.4.7",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.13",
+    "click-outside-vue3": "^4.0.1",
+    "daisyui": "^2.51.3",
+    "editorjs-html": "^3.4.2",
+    "pinia": "^2.0.33",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7",
+    "theme-change": "^2.5.0",
+    "vue-final-modal": "^4.0.11"
+  }
+}

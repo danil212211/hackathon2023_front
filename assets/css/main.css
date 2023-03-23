@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "Steppe-Bold";
+  src: local("Steppe-Bold"),
+    url("~/assets/fonts/Steppe-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Steppe-Regular";
+  src: local("Steppe-Regular"),
+    url("~/assets/fonts/Steppe-Regular.ttf") format("truetype");
+}
+@layer base {
+  html {
+    @apply text-md;
+  }
+  .input::placeholder{
+    @apply appearance-none;
+    color: currentColor;
+  }
+  h5 {
+    @apply text-sm
+  }
+  h4 {
+    @apply text-sm-bold
+  }
+  h3 {
+    @apply text-md
+  }
+  h2 {
+    @apply text-md-bold
+
+  }
+  h1 {
+    @apply text-lg
+  }
+  .input {
+    @apply
+      appearance-none outline-none  text-grey-label
+      w-full block py-5 px-6 border-grey-placehold
+      bg-grey-input focus-visible:bg-grey-off-white
+    focus-visible:border-grey-off-black rounded-md;
+    border-style: solid;
+    border-width: 3px;
+  }
+  .input-error, .input:invalid {
+    @apply  text-error border-error bg-error-bg focus-visible:border-error focus-visible:bg-error-bg ;
+  }
+  .input-success {
+    @apply   text-success border-success bg-success-bg focus:border-success focus-visible:border-success focus-visible:bg-success-bg;
+  }
+  .glass {
+    background: rgba(0, 0, 0, 0.01);
+    /* Серые/Input */
+
+    box-shadow: inset 0px 4px 48px rgba(241, 240, 240, 0.25);
+    backdrop-filter: blur(15px);
+  }
+  .glass-xl {
+    background: rgba(0, 0, 0, 0.01);
+    /* Серые/Input */
+
+    box-shadow: inset 0px 4px 48px rgba(241, 240, 240, 0.25);
+    backdrop-filter: blur(110px);
+  }
+  .btn,
+  .btn-outline {
+    @apply appearance-none flex justify-center gap-x-4 items-center rounded-md;
+
+    padding: 16px 32px 16px 32px;
+    border-width: 8px;
+    transition: all 400ms;
+    border-style: solid;
+  }
+  .btn {
+    color: white !important;
+    border-color: transparent;
+  }
+  .btn-outline {
+    background-color: transparent !important;
+  }
+  .btn-primary {
+    @apply text-primary bg-primary active:border-primary-light hover:bg-primary-dark;
+  }
+
+  .text-lg,
+  .text-sm-bold,
+  .text-md-bold {
+    font-family: Steppe-Bold, "comic sans";
+  }
+  .text-lg {
+    font-size: 32px;
+    line-height: 48px;
+  }
+  .text-md,
+  .text-md-bold {
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .text-sm,
+  .text-sm-bold {
+    padding-top: 5px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .text-xs {
+    font-size: 13px;
+    line-height: 22px;
+  }
+  a:not(:visited) {
+    @apply text-secondary hover:text-secondary-dark;
+  }
+  a:visited {
+    @apply text-secondary hover:text-secondary-dark;
+  }
+}

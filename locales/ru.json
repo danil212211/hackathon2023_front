@@ -1,0 +1,17 @@
+{
+  "feed": "Лента",
+  "vacancies": "Вакансии",
+  "events": "События",
+  "communities": "Сообщества",
+  "bookmarks": "Избранное",
+  "signin": "Вход",
+  "signup": "Регистрация",
+  "login": "Логин",
+  "email": "Почта",
+  "password": "Пароль",
+  "passwordRepeat": "Повтор пароля",
+  "haveAccount": "Уже есть аккаунт?",
+  "dontHaveAccount": "Еще нет аккаунта?",
+  "myProfile": "Мой профиль",
+  "settings": "Настройки"
+}
