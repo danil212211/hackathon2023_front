@@ -3,6 +3,7 @@
 import {useUserStore} from "~/stores/user";
 import Post from "~/components/Post.vue";
 import PostBlocks from "~/components/PostBlocks.vue";
+import LangOptions from "~/components/LangOptions.vue";
 
 const userStore = useUserStore();
 const posts = await useFetch(`/api/posts`,{
@@ -15,6 +16,7 @@ const posts = await useFetch(`/api/posts`,{
 </script>
 <template>
   <div class="py-5">
+    <LangOptions/>
     <PostList :posts="posts.data.value"/>
   </div>
 </template>

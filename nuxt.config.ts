@@ -5,7 +5,7 @@ import ykt from "./locales/ykt.json";
 export default defineNuxtConfig({
   ssr: false,
 
-  pageTransition: { name: "page", mode: "out-in"},
+  pageTransition: { name: "page", mode: "out-in" },
   css: ["~/assets/css/main.css", "vue-final-modal/style.css"],
   runtimeConfig: {
     public: {
@@ -18,9 +18,12 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@pinia/nuxt", "@pinia-plugin-persistedstate/nuxt" ,"@nuxtjs/i18n"],
+  modules: ["@pinia/nuxt", "@pinia-plugin-persistedstate/nuxt", "@nuxtjs/i18n"],
   i18n: {
-    locales: ["ru", "ykt"],
+    locales: [
+      { code: "ru", name: "Русский" },
+      { code: "ykt", name: "Саха" },
+    ],
     defaultLocale: "ru",
     strategy: "no_prefix",
     detectBrowserLanguage: false,
@@ -31,5 +34,5 @@ export default defineNuxtConfig({
         ykt,
       },
     },
-  }
+  },
 });

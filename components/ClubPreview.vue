@@ -32,7 +32,7 @@ const props = defineProps(["club"]);
             {{ club.description }}
           </div>
           <div class="flex-1 relative">
-            <div class="absolute right-0 bottom-0 text-grey-off-white">
+            <div class="absolute right-0 bottom-0 text-grey-off-white text-xs">
               Участников: {{ club.userCount }}
             </div>
           </div>

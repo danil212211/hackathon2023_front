@@ -16,7 +16,7 @@ const props = defineProps(["club"]);
         :src="`/api/public${club.image}`"
       />
       <div
-        class="absolute h-full w-[240px] right-0 rounded-lg glass transition-all group-hover:right-[90px] duration-500"
+        class="absolute h-full w-[240px] right-0 rounded-lg glass glass-md transition-all group-hover:right-[90px] duration-500"
       />
       <div
         class="absolute h-full w-[212px] px-10 text-clip absolute right-0 z-20"

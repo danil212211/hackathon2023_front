@@ -55,13 +55,13 @@
     /* Серые/Input */
 
     box-shadow: inset 0px 4px 48px rgba(241, 240, 240, 0.25);
+  }
+  .glass-md {
     backdrop-filter: blur(15px);
+
   }
   .glass-xl {
-    background: rgba(0, 0, 0, 0.01);
-    /* Серые/Input */
 
-    box-shadow: inset 0px 4px 48px rgba(241, 240, 240, 0.25);
     backdrop-filter: blur(110px);
   }
   .btn,

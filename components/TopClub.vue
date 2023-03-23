@@ -12,17 +12,17 @@ const props = defineProps(["club"]);
         class="w-full h-full object-cover"
       />
       <div
-        class="absolute w-full transition-all h-[135px]   px-4 rounded-t-lg rounded-b-md pt-6 pb-3 glass bottom-0 flex flex-col"
+        class="absolute w-full transition-all min-h-[135px] group-hover:min-h-[145px] group-hover:pt-8   px-4 rounded-t-lg rounded-b-md pt-6 pb-3 glass glass-md bottom-0 flex flex-col"
         :style="{color: club.textColor}"
       >
-        <div>
+        <div class="text-md-bold">
           {{ club.name }}
         </div>
-        <div class="line-clamp-3">
+        <div class="line-clamp-3 text-xs">
           {{ club.description }}
         </div>
         <div class="flex-1 relative">
-          <div class="absolute right-0 bottom-0 ">
+          <div class="absolute right-0 bottom-0 text-xs ">
             Участников: {{ club.userCount }}
           </div>
         </div>

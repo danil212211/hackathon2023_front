@@ -14,7 +14,7 @@ const props = defineProps(["blocks"]);
         class="mt-2.5 p-0 child:w-full child:object-cover child:rounded-4xl child:max-h-[500px]"
         v-html="$editorhtml().parseBlock(block)"
       />
-      <div v-else class="px-5" v-html="$editorhtml().parseBlock(block)" />
+      <div v-else  v-html="$editorhtml().parseBlock(block)" />
     </div>
   </div>
 </template>

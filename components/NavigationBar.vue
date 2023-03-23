@@ -13,27 +13,22 @@ const navigations = [
   {
     link: "/",
     icon: "Grid Feed Cards",
-    name: "Лента"
+    name: "feed",
   },
   {
     link: "/vacancies",
     icon: "Briefcase Portfolio",
-    name: "Вакансии"
+    name: "vacancies"
   },
   {
     link: "/events",
     icon: "Compass",
-    name: "События"
+    name: "events"
   },
   {
     link: "/clubs",
     icon: "Three People",
-    name: "Сообщества"
-  },
-  {
-    link: "/saved",
-    icon: "Save Favorite Bookmark",
-    name: "Избранное"
+    name: "clubs"
   },
 
 ]
@@ -44,7 +39,7 @@ const navigations = [
       <div class="flex h-full w-full items-center gap-x-4">
         <Icon :name="navigation.icon" class="w-6 h-6"/>
         <div class=" text-sm-bold">
-          {{navigation.name}}
+          {{$t(navigation.name)}}
         </div>
       </div>
     </button>

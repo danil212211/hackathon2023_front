@@ -6,13 +6,13 @@ const props = defineProps(["post", "preview"]);
 </script>
 <template>
   <div class="bg-white rounded-lg p-4">
-    <div class="flex justify-end">
-      <ClubTag :clubId="post.clubId"/>
-    </div>
-    <div>
+    <div class="flex justify-between">
+      <div class="text-grey-label space-x-1 text-xs">
+        <div class="inline-block">Автор статьи:</div>
+        <UserName class="inline-block" :login="post.userLogin"/>
+      </div>
 
-      <div class="inline-block">Автор статьи:</div>
-      <UserName class="inline-block" :login="post.userLogin"/>
+      <ClubTag :clubId="post.clubId"/>
     </div>
     <PostBlocks :blocks="post.text.blocks"/>
   </div>
