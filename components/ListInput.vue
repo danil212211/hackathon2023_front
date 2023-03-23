@@ -84,14 +84,14 @@ onMounted(() => {
       <div
           v-for="(input, index) in list"
           :key="input.id"
-          class="flex items-center gap-4 mb-5 duration-700 relative"
+          class="flex items-center group h-full gap-4 mb-5 duration-700 relative"
       >
         <h2>·</h2>
         <input
             :id="`listInput_${name}#${input.id}`"
             :ref="(el) => (inputArray[index] = el)"
             v-model="input.value"
-            class="input"
+            class="input "
             @keydown.delete="(el) => handleDelete(input.id, el)"
             @keydown.enter="handleEnter"
             @focusin="inputArray[index].isFocus = true"
@@ -100,7 +100,7 @@ onMounted(() => {
         />
         <label
             v-if="placeholder"
-            class="pointer-events-none text-base font-montserrat-regular absolute ml-10 left-0 top-8 inset-center-y transition-all"
+            class="pointer-events-none text-base text-grey-label font-montserrat-regular absolute ml-10 left-0 h-full inset-center-y transition-all flex items-center"
             :class="`
                 ${
                   inputArray[index]?.value || input.value ? ' opacity-0' : ' '

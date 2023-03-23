@@ -20,14 +20,14 @@ const userNavigations = [
     icon: "Compass",
   },
   {
-    link: "/",
+    link: "/create-vacancy",
     name: "Создать вакансию",
     icon: "Briefcase Portfolio",
   },
   {
     link: "exit",
     name: "Выйти",
-    icon: "Briefcase Portfolio",
+    icon: "Backspace",
   },
 ];
 function handleNavigation(navigation) {
