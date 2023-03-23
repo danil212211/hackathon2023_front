@@ -15,7 +15,7 @@ const userNavigations = [
     icon: "Grid Feed Cards",
   },
   {
-    link: "/",
+    link: "/create-event",
     name: "Создание событие",
     icon: "Compass",
   },

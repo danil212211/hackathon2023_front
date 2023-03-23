@@ -42,7 +42,7 @@ const handlePasswordRepeat = () => {
 };
 </script>
 <template>
-  <div class="w-fit  h-fit my-8 relative mx-auto">
+  <div class="my-8 relative w-fit mx-auto">
     <div
         class="absolute right-0 w-[200px] h-[200px] rounded-[500px] top-0 -mt-[30px] -mr-[60px]  bg-primary"
     />

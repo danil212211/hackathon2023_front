@@ -1,8 +1,15 @@
 <script setup lang="ts">
+
+import {useLocaleStore} from "~/stores/locales";
+
+const { setLocale } = useI18n();
+const localeStore = useLocaleStore();
+setLocale(localeStore.activeLocale)
+
 </script>
 <template>
-  <NuxtLayout>
-    <NuxtPage />
+  <NuxtLayout >
+    <NuxtPage  />
   </NuxtLayout>
 </template>
 <style>
