@@ -1,42 +1,46 @@
-# Nuxt 3 Minimal Starter
+# Свои
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
+----------
 
-Make sure to install the dependencies:
+## Описание проекта
 
-```bash
-# yarn
-yarn install
+Наш веб-ресурс предоставляет студентам из  Республики Саха (Якутия), обучающимся в образовательных организациях России уникальную возможность легко и быстро находить информацию о планируемых мероприятиях, актуальных стажировках в компаниях, а также подавать свои мероприятия, способствующие формированию сообщества. Сервис открывает пользователям развиваться в своей профессиональной сфере, находить новые возможности для карьерного роста и участвовать в создании сообщества единомышленников, которые готовы совместно решать актуальные задачи.
 
-# npm
-npm install
+----------
+## Стэк технологий
 
-# pnpm
-pnpm install
-```
+### Фронт:
+- HTML
+- VueJS
+- NuxtJS
+- TailwindCSS
+- EditorJS
+### Бэк:
+- NodeJS
+- ExpressJS
+- Sequelize
+- Postgresql
+- ChatGPT API
+- DALL-E API
 
-## Development Server
+----------
 
-Start the development server on http://localhost:3000
+## Команда
+### Разработчик
+- Зеленский Данил Олегович;
+- Навыки: Lean Canvas, Excel, Менеджмент;
+- Контакты: Телеграмм - @lecopshavefoundme.
 
-```bash
-npm run dev
-```
+### Менеджер
+- Быков Вадим Дмитриевич;
+- Навыки: Lean Canvas, Excel, Менеджмент;
+- Контакты: Телеграмм - @VadimBykov14.
 
-## Production
+### Дизайнер
+- Скорик Роман Андреевич;
+- Навыки: Figma, Photoshop, Abode Illustrator;
+- Контакты: Телеграмм - @skorik_acc.
 
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+----------
+## Проект сделан в рамках хакатона "Моя профессия IT!", г. Якутск, 2023.
