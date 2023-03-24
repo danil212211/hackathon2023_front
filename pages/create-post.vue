@@ -3,6 +3,13 @@ import { useUserStore } from "~/stores/user";
 
 const data = ref({});
 const clubId = ref(0);
+const clubColor = ref("transparent");
+watch(clubId, () => {
+  const newColorClub = subscribedClubs.data.value.filter(
+    (club) => club.id === clubId.value
+  );
+  clubColor.value = newColorClub[0].backgroundColor;
+});
 const userStore = useUserStore();
 const subscribedClubs = useFetch(
   `/api/clubs/subscribes/${userStore.userLogin}`,
@@ -30,18 +37,20 @@ async function createPost() {
 </script>
 <template>
   <div>
-    <div class="text-lg">Создание поста</div>
+    <div class="text-lg">{{ $t("postCreation") }}</div>
     <div class="w-full rounded-lg bg-white p-8">
       <div class="flex justify-end gap-x-5">
-        <div>Категория</div>
-        <select v-model="clubId">
-          <option  v-for="club in subscribedClubs.data.value" :value="club.id">
+        <div>{{ $t("postClub") }}</div>
+        <select class="w-fit rounded-md outline-none" v-model="clubId">
+          <option class="bg-transparent" v-for="club in subscribedClubs.data.value" :value="club.id">
             {{ club.name }}
           </option>
         </select>
       </div>
       <Editor @contentChanged="changeContent" />
-      <button @click="createPost" class="btn btn-primary">Создать пост</button>
+      <button @click="createPost" class="btn btn-primary">
+        {{ $t("createPost") }}
+      </button>
     </div>
   </div>
 </template>

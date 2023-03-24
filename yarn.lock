@@ -6171,6 +6171,11 @@ vue-bundle-renderer@^1.0.2:
   dependencies:
     ufo "^1.1.0"
 
+vue-collapsed@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/vue-collapsed/-/vue-collapsed-1.1.2.tgz#9cc9e6a4e633f5c7cf10da444b231050a2f9b637"
+  integrity sha512-XCP1j6C+lvPyb2/NW4Q5iDlR4qpDsm4tip5sWbQqMcBGWukovOvKqloLQbR5MiODArUXYH7R3eob9bCVVNjOng==
+
 vue-demi@*, vue-demi@^0.13.11, vue-demi@^0.13.5:
   version "0.13.11"
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.13.11.tgz#7d90369bdae8974d87b1973564ad390182410d99"

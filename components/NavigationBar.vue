@@ -34,7 +34,7 @@ const navigations = [
 ]
 </script>
 <template>
-  <div class="space-y-2.5 px-2">
+  <div class="sticky  top-[112px] space-y-2.5 px-2">
     <button class="h-[56px] w-full rounded-md px-4 transition-all " @click="navigate(navigation.link)" v-for="navigation in navigations" :class="`${navStore.currentNavigation === navigation.link ? 'text-grey-off-white btn-primary' : 'text-primary bg-transparent py-4 hover:bg-primary hover:text-grey-off-white'}`">
       <div class="flex h-full w-full items-center gap-x-4">
         <Icon :name="navigation.icon" class="w-6 h-6"/>

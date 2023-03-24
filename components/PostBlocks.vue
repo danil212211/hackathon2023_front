@@ -11,7 +11,7 @@ const props = defineProps(["blocks"]);
       />
       <div
         v-else-if="block.type === 'image' || block.type ==='dalleImage'"
-        class="mt-2.5 p-0 child:w-full child:object-cover child:rounded-4xl child:max-h-[500px]"
+        class="mt-2.5 p-0 child:w-full child:object-cover child:rounded-lg child:max-h-[500px]"
         v-html="$editorhtml().parseBlock(block)"
       />
       <div v-else  v-html="$editorhtml().parseBlock(block)" />

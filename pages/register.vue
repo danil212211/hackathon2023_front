@@ -42,31 +42,26 @@ const handlePasswordRepeat = () => {
 };
 </script>
 <template>
-  <div class="my-8 relative w-fit mx-auto">
-    <div
-        class="absolute right-0 w-[200px] h-[200px] rounded-[500px] top-0 -mt-[30px] -mr-[60px]  bg-primary"
-    />
-    <div
-        class="absolute  w-[200px] h-[200px] rounded-[500px] left-0 bottom-0 -mb-[20px] -ml-[60px]  bg-primary"
-    />
-    <div
-      class="w-fit h-fit p-4 lg:p-[65px] glass-xl relative rounded-lg  mx-auto"
-    >
+  <div class="px-2">
+    <div class="w-full max-w-[620px] lg:w-fit h-fit p-8 lg:p-[65px] glass-xl rounded-lg">
       <div class="w-full lg:w-[428px]">
-        <form @submit.prevent="handleRegister" novalidate class="space-y-6">
+        <form @submit.prevent="handleRegister" class="space-y-6">
           <div class="text-lg">{{ $t("signup") }}</div>
           <input
+            required
             v-model="login"
             class="input appearance-none"
             :placeholder="$t('login')"
           />
           <input
+            required
             type="email"
             v-model="email"
             class="input appearance-none"
             :placeholder="$t('email')"
           />
           <input
+            required
             :class="`${isInvalid ? 'input-error' : ''}`"
             v-model="password"
             type="password"
@@ -75,6 +70,7 @@ const handlePasswordRepeat = () => {
             :placeholder="$t('password')"
           />
           <input
+            required
             :class="`${isInvalid ? 'input-error' : ''}`"
             @input="handlePasswordRepeat"
             v-model="passwordRepeat"

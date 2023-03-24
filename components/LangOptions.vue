@@ -16,7 +16,7 @@ function handleSelect() {
 }
 </script>
 <template>
-  <select ref="localeSelector" @change="handleSelect">
+  <select class=" bg-transparent outline-none" ref="localeSelector" @change="handleSelect">
     <option
       v-for="selectLocale in availableLocales"
       :selected="selectLocale.code === localeStore.activeLocale"

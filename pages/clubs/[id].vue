@@ -42,19 +42,28 @@ const clubPosts = await useFetch(`/api/posts/club`,{
     <div
       class="h-[378px] w-full overflow-hidden relative rounded-t-lg rounded-b-md"
     >
+
       <img
         :src="`/api/public${club.image}`"
         class="w-full h-full object-cover"
       />
       <div
-        class="absolute w-full h-[235px] px-4 rounded-t-lg rounded-b-md pt-10 pb-3 glass bottom-0 flex flex-col"
-        :style="{ color: club.textColor }"
+        class="absolute text-grey-off-black w-full h-[235px] px-4 rounded-t-lg rounded-b-md pt-10 pb-3 glass glass-xl bottom-0 flex flex-col"
+
       >
         <div class="text-lg">
           {{ club.name }}
         </div>
         <div class="line-clamp-3">
           {{ club.description }}
+        </div>
+        <div class="flex items-center gap-x-2 ">
+          <Icon name="Three People" class="w-6 h-6"/>
+          <div>{{club.userCount}} участников</div>
+        </div>
+        <div class="flex items-center gap-x-2 text-grey-off-black">
+          <Icon name="Read Book" class="w-6 h-6"/>
+          <div>{{club.postCount}} записей</div>
         </div>
         <div class="flex-1 relative">
           <div class="absolute right-0 bottom-0">
@@ -68,6 +77,7 @@ const clubPosts = await useFetch(`/api/posts/club`,{
         </div>
       </div>
     </div>
+
     <PostList :posts="clubPosts.data.value"/>
   </div>
 </template>

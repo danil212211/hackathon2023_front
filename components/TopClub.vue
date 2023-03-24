@@ -2,7 +2,7 @@
 const props = defineProps(["club"]);
 </script>
 <template>
-  <div class="my-8 group">
+  <div class=" group">
     <div
         @click="()=>{navigateTo(`/clubs/${club.id}`)}"
       class="h-[216px] w-[330px] cursor-pointer overflow-hidden relative rounded-t-lg rounded-b-md"
@@ -23,7 +23,7 @@ const props = defineProps(["club"]);
         </div>
         <div class="flex-1 relative">
           <div class="absolute right-0 bottom-0 text-xs ">
-            Участников: {{ club.userCount }}
+            {{ $t("cubPreviewSubscribers") }} {{ club.userCount }}
           </div>
         </div>
       </div>

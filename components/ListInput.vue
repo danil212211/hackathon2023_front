@@ -93,7 +93,7 @@ onMounted(() => {
             v-model="input.value"
             class="input "
             @keydown.delete="(el) => handleDelete(input.id, el)"
-            @keydown.enter="handleEnter"
+            @keydown.enter.prevent="handleEnter"
             @focusin="inputArray[index].isFocus = true"
             @focusout="inputArray[index].isFocus = false"
             @click="handleClick(index)"

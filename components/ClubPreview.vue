@@ -9,7 +9,7 @@ const props = defineProps(["club"]);
           navigateTo(`/clubs/${club.id}`);
         }
       "
-      class="h-[216px] w-[216px] cursor-pointer overflow-hidden relative rounded-t-lg rounded-b-md"
+      class="h-[216px] w-[216px] cursor-pointer transition-all hover:scale-105 active:scale-95 overflow-hidden  relative rounded-t-lg rounded-b-md"
     >
       <img
         :src="`/api/public${club.image}`"
@@ -33,7 +33,7 @@ const props = defineProps(["club"]);
           </div>
           <div class="flex-1 relative">
             <div class="absolute right-0 bottom-0 text-grey-off-white text-xs">
-              Участников: {{ club.userCount }}
+              {{ $t("clubPreviewSubscribers") }} {{ club.userCount }}
             </div>
           </div>
         </div>

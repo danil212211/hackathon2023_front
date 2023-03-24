@@ -5,6 +5,8 @@ import Header from "@editorjs/header";
 import Embed from "@editorjs/embed";
 import ImageTool from "@editorjs/image";
 
+
+const $t = useI18n().t;
 class DalleImageTool {
   data;
   wrapper;
@@ -14,7 +16,7 @@ class DalleImageTool {
   }
   static get toolbox() {
     return {
-      title: "Картинка с DAll-e",
+      title: $t("photoGeneration"),
       icon: '<svg width="17" height="15" viewBox="0 0 336 276" xmlns="http://www.w3.org/2000/svg"><path d="M291 150V79c0-19-15-34-34-34H79c-19 0-34 15-34 34v42l67-44 81 72 56-29 42 30zm0 52l-43-30-56 30-81-67-66 39v23c0 19 15 34 34 34h178c17 0 31-13 34-29zM79 0h178c44 0 79 35 79 79v118c0 44-35 79-79 79H79c-44 0-79-35-79-79V79C0 35 35 0 79 0z"/></svg>',
     };
   }
@@ -29,11 +31,14 @@ class DalleImageTool {
     if (this.data?.outputText === undefined) {
       const input = document.createElement("input");
       input.style.width = "100%";
-      input.className = "outline outline-2"
+      input.className = "outline outline-2";
 
       const button = document.createElement("button");
-      button.textContent = "Сгенерировать Картинку";
-      button.className="btn btn-primary mt-2";
+      button.innerHTML = `
+              <div class="flex items-center gap-x-4">
+      <div>${$t("imageGenerate")}</div>
+       </div>`;
+      button.className = "btn btn-primary mt-2";
 
       this.wrapper.appendChild(input);
       this.wrapper.appendChild(button);
@@ -41,6 +46,15 @@ class DalleImageTool {
         this.data.inputText = e.target.value;
       });
       button.addEventListener("click", async () => {
+        button.innerHTML = `
+              <div class="flex items-center gap-x-4">
+      <div>${$t("imageGenerate")}</div>
+      <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 000"></path>
+      </svg>
+
+       </div>`;
         const { data } = await useFetch(`/api/openai/image`, {
           query: {
             text: this.data.inputText,
@@ -58,7 +72,7 @@ class DalleImageTool {
   save(blockContent) {
     const block = blockContent.querySelector("img");
 
-    console.log(blockContent, "hmm",blockContent.src);
+    console.log(blockContent, "hmm", blockContent.src);
     return {
       url: this.data.url,
     };
@@ -73,7 +87,7 @@ class ChatTool {
   }
   static get toolbox() {
     return {
-      title: "Чат с GPT",
+      title: $t("textGeneration"),
       icon: '<svg width="17" height="15" viewBox="0 0 336 276" xmlns="http://www.w3.org/2000/svg"><path d="M291 150V79c0-19-15-34-34-34H79c-19 0-34 15-34 34v42l67-44 81 72 56-29 42 30zm0 52l-43-30-56 30-81-67-66 39v23c0 19 15 34 34 34h178c17 0 31-13 34-29zM79 0h178c44 0 79 35 79 79v118c0 44-35 79-79 79H79c-44 0-79-35-79-79V79C0 35 35 0 79 0z"/></svg>',
     };
   }
@@ -89,11 +103,15 @@ class ChatTool {
     if (this.data?.outputText === undefined) {
       const input = document.createElement("input");
       input.style.width = "100%";
-      input.className = "outline outline-2"
+      input.className = "outline outline-2";
       const button = document.createElement("button");
-      button.textContent = "Сгенерировать Текст";
-      button.className="btn btn-primary mt-2";
-
+      button.className = "btn btn-primary mt-2";
+      button.innerHTML = `
+      <div class="flex items-center gap-x-4">
+      <div>${$t("textGenerate")}</div>
+       </div>
+      `;
+      const loadingSpin = document.createElement("AppIcon");
       this.wrapper.appendChild(input);
       this.wrapper.appendChild(button);
       input.addEventListener("input", (e) => {
@@ -105,6 +123,15 @@ class ChatTool {
         }
       });
       button.addEventListener("click", async () => {
+        button.innerHTML = `
+              <div class="flex items-center gap-x-4">
+      <div>${$t("textGenerate")}</div>
+      <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 000"></path>
+      </svg>
+
+       </div>`;
         const { data } = await useFetch(`/api/openai/chat`, {
           query: {
             text: this.data.inputText,
@@ -127,7 +154,7 @@ class ChatTool {
   }
   save(blockContent) {
     const block = blockContent.querySelector("textarea");
-    console.log(blockContent,block);
+    console.log(blockContent, block);
 
     return {
       text: block.value,
@@ -168,7 +195,7 @@ async function onChange() {
 async function uploadImage(image) {
   const formData = new FormData();
   formData.append("image", image);
-  const { data } = await useFetch(`${runtimeConfig.apiBase}/editor/image`, {
+  const { data } = await useFetch(`/api/editor/image`, {
     method: "POST",
     body: formData,
   });
@@ -190,10 +217,12 @@ onMounted(async () => {
           class: DalleImageTool,
         },
         header: {
+
           class: Header,
           config: {
             defaultLevel: 2,
             placeholder: "Заголовок",
+
           },
         },
         embed: {
@@ -306,8 +335,8 @@ onMounted(async () => {
            * Section for translation Tool Names: both block and inline tools
            */
           toolNames: {
-            Text: "Параграф",
-            Heading: "Заголовок",
+            Text: $t("paragraph"),
+            Heading: $t("header"),
             List: "Список",
             Warning: "Примечание",
             Checklist: "Чеклист",
@@ -320,7 +349,7 @@ onMounted(async () => {
             Marker: "Маркер",
             Bold: "Полужирный",
             Italic: "Курсив",
-            Image: "Изображение",
+            Image: $t("image"),
             InlineCode: "Моноширинный",
           },
 

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 @font-face {
+  font-family: "RockStar-SemiBold";
+  src: local("RockStar-SemiBold"),
+  url("~/assets/fonts/RockStar-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "Steppe-Bold";
   src: local("Steppe-Bold"),
     url("~/assets/fonts/Steppe-Bold.ttf") format("truetype");
@@ -13,7 +19,7 @@
 }
 @layer base {
   html {
-    @apply text-md;
+    @apply text-md break-words;
   }
   .input::placeholder{
     @apply appearance-none;
@@ -45,7 +51,6 @@
     border-width: 3px;
   }
   .input-error, .input:invalid {
-    @apply  text-error border-error bg-error-bg focus-visible:border-error focus-visible:bg-error-bg ;
   }
   .input-success {
     @apply   text-success border-success bg-success-bg focus:border-success focus-visible:border-success focus-visible:bg-success-bg;
@@ -66,9 +71,9 @@
   }
   .btn,
   .btn-outline {
-    @apply appearance-none flex justify-center gap-x-4 items-center rounded-md;
+    @apply appearance-none flex justify-center  items-center rounded-md;
 
-    padding: 16px 32px 16px 32px;
+    padding: 8px 8px 8px 8px;
     border-width: 8px;
     transition: all 400ms;
     border-style: solid;
@@ -84,12 +89,12 @@
     @apply text-primary bg-primary active:border-primary-light hover:bg-primary-dark;
   }
 
-  .text-lg,
   .text-sm-bold,
   .text-md-bold {
-    font-family: Steppe-Bold, "comic sans";
+    font-family: Steppe-Bold, "comic sans", serif;
   }
   .text-lg {
+    font-family: RockStar-SemiBold, "comic sans", serif;
     font-size: 32px;
     line-height: 48px;
   }

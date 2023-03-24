@@ -7,7 +7,7 @@ const clubData = club.data.value;
 </script>
 
 <template>
-  <div :style="{backgroundColor: clubData.backgroundColor,color: clubData.textColor}" class="p-2 text-xs rounded-md w-fit">
+  <div @click="navigateTo(`/clubs/${props.clubId}`)" :style="{backgroundColor: clubData.backgroundColor,color: clubData.textColor}" class="p-2 cursor-pointer text-xs rounded-md w-fit">
 
     {{club.data.value.name}}
   </div>
